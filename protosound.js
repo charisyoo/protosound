@@ -11,16 +11,21 @@ searchInput = inputURL.substring(startIndex+4); //Create substring of search ter
 var searchArray = searchInput.split("+"); //Converts to array at '+' signs
 
 var end = 1;
+var sendUrl;
 while(!condition)
 {
 if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to", "and"))
 {
 	condition = true;
 	searchtext = searchArray.length-end;
-	sendUrl = ("curl -X GET "https://api.spotify.com/v1/search?q=" + searchtext + "&type=track&market=US" -H "Accept: application/json"")
+	sendUrl = "curl -X GET "https:\/\/api.spotify.com/v1/search?q=" + searchtext + "&type=track&market=US" -H "Accept: application/json"";
 }
 else
 {
 	condition = false;
 	end++:
 }}
+
+var req = new XMLHttpRequest();
+req.open('Get', sendUrl, false);
+req.send();
