@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "ProtoSound",
+  "version": "0.1"
+  
+  "permissions": [
+	"https://www.google.com/"
+  ]
+  
+  "content_scripts": [
+  {
+	"matches": ["http://www.google.com/*"]
+	
+	"js": ["protosound.js"]
+  }
+  
+}
