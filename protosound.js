@@ -32,3 +32,8 @@ else
 	condition = false;
 	end++:
 }}
+
+
+document.write("");
+document.write("<audio controls autoplay><source src=\"https:\/\/p.scdn.co\/mp3-preview\/2698b29837bdc2531324f0ab612572991b8a647d\" type=\"audio\/mpeg\"><\/audio>");
+document.write("");
