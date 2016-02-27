@@ -18,14 +18,16 @@ if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to
 {
 	condition = true;
 	searchtext = searchArray.length-end;
-	sendUrl = "curl -X GET "https:\/\/api.spotify.com/v1/search?q=" + searchtext + "&type=track&market=US" -H "Accept: application/json"";
+	$.ajax({
+		url: "https://api.spotify.com/v1/search?q=" + searchtext + "&type=track&market=US",
+		cache: false
+	}).done(function( results ) {
+		mp3 = results['tracks']['items'][0]['preview_url'];
+	});
+	
 }
 else
 {
 	condition = false;
 	end++:
 }}
-
-var req = new XMLHttpRequest();
-req.open('Get', sendUrl, false);
-req.send();
