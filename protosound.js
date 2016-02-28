@@ -1,13 +1,8 @@
-chrome.runtime.onMessage.addListener(
-	function(request,sender,senderResponse) {
-	console.log(sender.tab ?
-			"from a content script:" + sender.tab.url :
-			"from the extension");
-	var inputURL = requst.greeting;
-	var startIndex = inputURL.indexOf("q=");
-	searchInput = inputURL.substring(startIndex+2); //Create substring of search terms
 
-	var searchArray = searchInput.split("+") || searchInput.split("%20"); //Converts to array at '+' signs
+	var inputURL = url.indexOf("q=");
+	searchInput = inputURL.substring(startIndex+2);
+
+	var searchArray = searchInput.split("+") || searchInput.split("%20");
 
 	var end = 1;
 	var sendUrl;
@@ -30,10 +25,9 @@ chrome.runtime.onMessage.addListener(
 	end++;
 	}}
 
-	music = mp3;
+	var music = mp3;
 	var myAudio = new Audio();    
-	myAudio.src = "https://p.scdn.co/mp3-preview/2698b29837bdc2531324f0ab612572991b8a647d"; 			
-	myAudio.play();  
+	myAudio.src = "music";
 });
 
 
