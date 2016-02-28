@@ -27,7 +27,7 @@ chrome.runtime.onMessage.addListener(
 	else
 	{
 	condition = false;
-	end++:
+	end++;
 	}}
 
 	music = mp3;

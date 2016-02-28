@@ -1,5 +1,9 @@
  chrome.browserAction.onClicked.addListener(function(tab){
- 	chrome.tabs.executeScript(null, {file: "TEST.js" });
+ 	if (tab.url.indexOf("http://www.google.com/")!= -1 || tab.url.indexOf("https://www.google.com/")!= -1) {
+ 	console.log("ProtoSound")
+ 	chrome.tabs.executeScript(tab.id, {
+ 		"file": "TEST.js"}
+ 	});
  });
 
 /*

@@ -1,19 +1,20 @@
 {
   "name": "ProtoSound",
   "version": "1",
-  "manifest_version": 2,
-  "description": "Fucking Work",
-  "permissions": [
-    "webRequest","*://*.google.com/", "activeTab"
-  ],
-
+  "description": "Plays background music from spotify based on keywords in search query",
+  
   "browser_action": {
     "default_icon": "icon.png",
     "default_title": "ProtoSound"
   },
 
+  "permissions": [
+    "http://www.google.com/*", "https://www.google.com/*", "tabs"
+  ],
+
   "background":{
-    "scripts": ["background.js", "TEST.js", "protosound.js"],
-    "persistent": true
-  }
+    "scripts": ["background.js", "protosound.js"],
+    "persistent": false
+  },
+  "manifest_version": 2
 }
