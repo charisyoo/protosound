@@ -13,8 +13,8 @@
   ],
 
   "background":{
-    "scripts": ["background.js", "protosound.js"],
-    "persistent": false
+    "scripts": ["jquerylibrary.js", "background.js", "protosound.js"],
+    "persistent": true
   },
   "manifest_version": 2
 }

@@ -1,36 +1,38 @@
+var startIndex = url.indexOf("q=");
+var searchInput = url.substring(startIndex+2);
 
-	var inputURL = url.indexOf("q=");
-	searchInput = inputURL.substring(startIndex+2);
+var searchArray = searchInput.split("+") || searchInput.split("%20");
 
-	var searchArray = searchInput.split("+") || searchInput.split("%20");
+alert(searchArray);
 
-	var end = 1;
-	var sendUrl;
-	while(!condition)
+var mp3;
+var end = 1;
+var condition = false;
+while(condition == false)
+{
+	console.log("Test");
+	if ((searchArray[searchArray.length-end]) = ("a", "it", "is", "the", "with", "an", "by", "to", "and"))
 	{
-
-	if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to", "and"))
-	{
-	$.ajax({
-		url: "https://api.spotify.com/v1/search?q=" + searchtext + "&type=track&market=US",
-		cache: false
-	}).done(function( results ) {
-		mp3 = results['tracks']['items'][0]['preview_url'];
-	});
-	
+		condition = false;
+		end++;
 	}
 	else
 	{
-	condition = false;
-	end++;
-	}}
+		condition = true;
+		var searchtext = searchArray[searchArray.length-end]
+		var url = ("https://api.spotify.com/v1/search?q=" + searchtext + "&type=track&market=US");
+		$.get( url, function( data ) {
+  			alert( "Load was performed." );
+		    mp3 = data['tracks']['items'][0]['preview_url'];
+		});
+	}
+}
 
-	var music = mp3;
-	var myAudio = new Audio();    
-	myAudio.src = "music";
-});
+var music = mp3;
+var myAudio = new Audio();    
+myAudio.src = "music"; 			
+myAudio.play();  
 
-////
 
 
 
