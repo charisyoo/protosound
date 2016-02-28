@@ -1,17 +1,22 @@
 {
   "manifest_version": 2,
   "name": "ProtoSound",
-  "version": "0.1"
+  "version": "0.5",
+  
+  "browser_action": {
+	"default_icon": "icon.png",
+	"default_popup": "popup.html"
+  },
   
   "permissions": [
-	"*://*.google.com/", "webRequest"
-  ]
+	"webRequest","*://*.google.com/"
+  ],
   
   "content_scripts": [
-  {
-	"matches": ["http://www.google.com/*"]
-	
+  	{
+	"matches": ["http://www.google.com/*"],
 	"js": ["protosound.js"]
-  }
+  	}
   
+  ]
 }
