@@ -1,5 +1,5 @@
 var startIndex = inputURL.indexOf("#q=");
-searchInput = inputURL.substring(startIndex+4); //Create substring of search terms
+searchInput = inputURL.substring(startIndex+3); //Create substring of search terms
 
 var searchArray = searchInput.split("+"); //Converts to array at '+' signs
 
