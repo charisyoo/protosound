@@ -1,11 +1,3 @@
-var inputURL;
-
-chrome.webRequest.onCompleted.addListener( 
-	function(details) {           //Reads url on completion of event and 
-		inputURL = details.url;   //assigns it to inputURL
-	});
-
-
 var startIndex = inputURL.indexOf("#q=");
 searchInput = inputURL.substring(startIndex+4); //Create substring of search terms
 
@@ -31,12 +23,10 @@ if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to
 else
 {
 	condition = false;
-	end++:
+	end++;
 }}
 //
 
 document.write("");
 document.write('<audio controls autoplay><source src=\"https:\/\/p.scdn.co\/mp3-preview\/2698b29837bdc2531324f0ab612572991b8a647d\" type=\"audio\/mpeg\"><\/audio>');
 document.write("");
-
-
