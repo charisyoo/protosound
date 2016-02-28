@@ -1,12 +1,10 @@
-var inputURL; //Variable declaration for the inputted URL
+var inputURL;
 
-var inputURL = "https://www.google.com/?gws_rd=ssl#q=how+to+speak+korean";
-/*
-chrome.webRequest.onComplete.addListener( 
+chrome.webRequest.onCompleted.addListener( 
 	function(details) {           //Reads url on completion of event and 
 		inputURL = details.url;   //assigns it to inputURL
 	});
-*/
+
 
 var startIndex = inputURL.indexOf("#q=");
 searchInput = inputURL.substring(startIndex+4); //Create substring of search terms
