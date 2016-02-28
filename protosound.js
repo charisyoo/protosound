@@ -1,6 +1,6 @@
 var inputURL; //Variable declaration for the inputted URL
 
-chrome.webReqeust.onComplete.addListener( 
+chrome.webRequest.onComplete.addListener( 
 	function(details) {           //Reads url on completion of event and 
 		inputURL = details.url;   //assigns it to inputURL
 	});
