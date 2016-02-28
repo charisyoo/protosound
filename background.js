@@ -1,10 +1,12 @@
- chrome.browserAction.onClicked.addListener(function(tab){
- 	if (tab.url.indexOf("http://www.google.com/")!= -1 || tab.url.indexOf("https://www.google.com/")!= -1) {
- 	console.log("ProtoSound")
- 	chrome.tabs.executeScript(tab.id, {
- 		"file": "TEST.js"}
- 	});
- });
+chrome.browserAction.onClicked.addListener(function(tab) {
+    var url = window.location.href.toString();
+ 	  if (tab.url.indexOf("http://www.google.com/")!= -1 || tab.url.indexOf("https://www.google.com/")!= -1) {
+ 	  console.log("ProtoSound");
+ 	  chrome.tabs.executeScript(tab.id, {code: "var url = window.location.href.toString();"}, function() {
+ 	  chrome.tabs.executeScript(tab.id, {file: "TEST.js"})
+ 	  }
+    )}
+});
 
 /*
 chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT},
@@ -13,6 +15,7 @@ chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT}
 		}
 );
 */
+
 /*
 chrome.webRequest.onCompleted.addListener(
 	function(details) {
@@ -21,4 +24,4 @@ chrome.webRequest.onCompleted.addListener(
   		console.log("response.greeting")
 			});
 });
-*?
+*/
