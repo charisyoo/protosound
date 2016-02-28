@@ -1,0 +1,19 @@
+{
+  "name": "ProtoSound",
+  "version": "1",
+  "manifest_version": 2,
+  "description": "Fucking Work",
+  "permissions": [
+    "webRequest","*://*.google.com/", "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "ProtoSound"
+  },
+
+  "background":{
+    "scripts": ["background.js", "TEST.js", "protosound.js"],
+    "persistent": true
+  }
+}
