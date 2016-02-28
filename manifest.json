@@ -1,6 +1,6 @@
 {
   "name": "ProtoSound",
-  "version": "1",
+  "version": "1.0 ",
   "description": "Plays background music from spotify based on keywords in search query",
   
   "browser_action": {
@@ -13,7 +13,7 @@
   ],
 
   "background":{
-    "scripts": ["jquerylibrary.js", "background.js", "protosound.js"],
+    "scripts": ["background.js", "protosound.js"],
     "persistent": true
   },
   "manifest_version": 2
