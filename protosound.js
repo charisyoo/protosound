@@ -1,9 +1,12 @@
 var inputURL; //Variable declaration for the inputted URL
 
+var inputURL = "https://www.google.com/?gws_rd=ssl#q=how+to+speak+korean";
+/*
 chrome.webRequest.onComplete.addListener( 
 	function(details) {           //Reads url on completion of event and 
 		inputURL = details.url;   //assigns it to inputURL
 	});
+*/
 
 var startIndex = inputURL.indexOf("#q=");
 searchInput = inputURL.substring(startIndex+4); //Create substring of search terms
@@ -17,19 +20,6 @@ while(!condition)
 
 if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to", "and"))
 {
-
-	document.write("");
-document.write('<button onclick=\"myFunction()\">Try it<\/button>');
-document.write("");
-document.write("<script>");
-document.write("function myFunction() {");
-document.write('window.open(\"http:\/\/www.w3schools.com\");');
-document.write("}");
-document.write("<\/script>");
-document.write("");
-document.write("");
-
-
 	condition = true;
 	searchtext = searchArray.length-end;
 	$.ajax({
