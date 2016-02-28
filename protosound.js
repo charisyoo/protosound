@@ -1,17 +1,21 @@
-var startIndex = inputURL.indexOf("#q=");
-searchInput = inputURL.substring(startIndex+3); //Create substring of search terms
+chrome.runtime.onMessage.addListener(
+	function(request,sender,senderResponse) {
+	console.log(sender.tab ?
+			"from a content script:" + sender.tab.url :
+			"from the extension");
+	var inputURL = requst.greeting;
+	var startIndex = inputURL.indexOf("q=");
+	searchInput = inputURL.substring(startIndex+2); //Create substring of search terms
 
-var searchArray = searchInput.split("+"); //Converts to array at '+' signs
+	var searchArray = searchInput.split("+") || searchInput.split("%20"); //Converts to array at '+' signs
 
-var end = 1;
-var sendUrl;
-while(!condition)
-{
+	var end = 1;
+	var sendUrl;
+	while(!condition)
+	{
 
-if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to", "and"))
-{
-	condition = true;
-	searchtext = searchArray.length-end;
+	if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to", "and"))
+	{
 	$.ajax({
 		url: "https://api.spotify.com/v1/search?q=" + searchtext + "&type=track&market=US",
 		cache: false
@@ -19,14 +23,19 @@ if ((searchArray.length-end) != ("a", "it", "is", "the", "with", "an", "by", "to
 		mp3 = results['tracks']['items'][0]['preview_url'];
 	});
 	
-}
-else
-{
+	}
+	else
+	{
 	condition = false;
 	end++;
-}}
-//
+	}}
 
-document.write("");
-document.write('<audio controls autoplay><source src=\"https:\/\/p.scdn.co\/mp3-preview\/2698b29837bdc2531324f0ab612572991b8a647d\" type=\"audio\/mpeg\"><\/audio>');
-document.write("");
+	music = mp3;
+	var myAudio = new Audio();    
+	myAudio.src = "https://p.scdn.co/mp3-preview/2698b29837bdc2531324f0ab612572991b8a647d"; 			
+	myAudio.play();  
+});
+
+
+
+
